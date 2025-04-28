@@ -12,9 +12,17 @@ import { square } from "./arrowFunctions";
  */
 
 // Comment out this function before starting your solution
-function squares(numbers: number[]): number[] {
-  return [0];
-}
+// function squares(numbers: number[]): number[] {
+//   return [0];
+// }
+
+type SqueredNumberArray = (numbers: number[]) => number[];
+const squares: SqueredNumberArray = (numbers) => {
+  for (let i = 0; i < numbers.length; i++) {
+    numbers[i] = square(numbers[i]);
+  }
+  return numbers;
+};
 
 // example:
 squares([1, 2, 3]); // => [1, 4, 9]
